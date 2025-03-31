@@ -26,6 +26,9 @@ class ResearchResponse(BaseModel):
   summary:str
   sources:list[str]
   tools_used:list[str]
+  think:str
+  action:list[str]
+  observation:str
 
 parser = PydanticOutputParser(pydantic_object=ResearchResponse)
 
@@ -35,7 +38,8 @@ prompt =  ChatPromptTemplate.from_messages(
          "system",
          """
          You are a research assistant that will help generate a research paper.
-         Answer the user query and use necessary tools.
+         Answer the user query and use necessary tools. Think step by step. Explain your reasoning.
+         State and list your possible actions. Reflect on your observations after executing tools.  
          Wrap the output in this format and provide no other text \n{format_instructions}\n
          """,
      ),

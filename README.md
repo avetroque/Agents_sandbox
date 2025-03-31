@@ -10,3 +10,4 @@ Learning space for building AI agents
 Code adjusted accordingly. Changes made are
 * Using Gemini instead of Anthropic or ChatGPT
 * Using github codespaces (as my laptop is broken)
+* Added Think-Action-Observation in the prompt and BaseModel. Seems to be doing good. 
